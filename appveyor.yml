@@ -20,7 +20,7 @@ environment:
 build_script:
   - R -e "install.packages('rJava', repos = 'http://cran.us.r-project.org', INSTALL_opts='--no-multiarch')"
   - R -e  "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
-  - R -e  "dir.create('C:/projects/javaonappveyortest/packrat/lib/i386-w64-mingw32/3.3.1', mode = '777')"
+  - R -e  "dir.create('C:/projects/javaonappveyortest/packrat/lib/i386-w64-mingw32/3.3.1', recursive = TRUE, mode = '777')"
   - R -e  "install.packages('rJava', repos = 'http://cran.us.r-project.org', lib = 'C:/projects/javaonappveyortest/packrat/lib/i386-w64-mingw32/3.3.1')"
   - R -e  "devtools::install_github('rstudio/packrat', lib = 'C:/projects/javaonappveyortest/packrat/lib/i386-w64-mingw32/3.3.1')" --args --bootstrap-packrat
 
